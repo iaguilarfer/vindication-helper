@@ -61,7 +61,11 @@ export default function Setup() {
           Get new random setup
         </Button>
         <Link href={"/"}>
-          <Button className={styles.button} size={"large"} primary={true}>
+          <Button
+            className={cx(styles.button, styles["link-button"])}
+            size={"large"}
+            primary={true}
+          >
             Start again
           </Button>
         </Link>

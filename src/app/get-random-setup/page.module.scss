@@ -13,6 +13,8 @@
   background: rgb(var(--background-start-rgb));
   display: flex;
   gap: 1rem;
+  height: 100%;
+  padding-bottom: 2rem;
 }
 
 :global(#app) {
@@ -23,9 +25,11 @@
 
   .button {
     font-size: 1.5rem;
-    height: auto;
     width: 100%;
-    margin-bottom: 2rem;
+  }
+
+  .link-button {
+    height: 100%;
   }
 }
 
