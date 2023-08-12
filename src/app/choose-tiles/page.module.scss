@@ -11,6 +11,8 @@
   bottom: 0;
   padding-top: 2rem;
   background: rgb(var(--background-start-rgb));
+  display: flex;
+  gap: 1rem;
 }
 
 :global(#app) {
@@ -23,7 +25,6 @@
     font-size: 1.5rem;
     height: auto;
     width: 100%;
-
     margin-bottom: 2rem;
   }
 }

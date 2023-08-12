@@ -10,6 +10,8 @@
   position: sticky;
   bottom: 2.5rem;
   background: rgb(var(--background-start-rgb));
+  display: flex;
+  gap: 1rem;
 }
 
 :global(#app) {
