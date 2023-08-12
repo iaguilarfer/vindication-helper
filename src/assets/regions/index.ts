@@ -1,4 +1,8 @@
-export const regionImages = {
+interface Images {
+  [x: string]: string;
+}
+
+export const regionImages: Images = {
   AncientTomb: require("./AncientTomb.png"),
   ArcaneTower: require("./ArcaneTower.png"),
   GapingMaw: require("./GapingMaw.png"),

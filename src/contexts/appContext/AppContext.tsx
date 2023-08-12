@@ -61,12 +61,15 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
   });
 
   const requiredSets: Array<TileSet> = useMemo(() => {
-    const unfilteredSets = expansions.reduce((acc, expansion) => {
-      if (expansion.isSelected) {
-        return [...acc, ...expansion.requiredTileSets];
-      }
-      return acc;
-    }, []);
+    const unfilteredSets = expansions.reduce(
+      (acc: Array<TileSet>, expansion) => {
+        if (expansion.isSelected) {
+          return [...acc, ...expansion.requiredTileSets];
+        }
+        return acc;
+      },
+      []
+    );
     const filteredSets = [...new Set(unfilteredSets)];
     return filteredSets.map((set) => ({
       ...set,
@@ -167,7 +170,7 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
   };
 
   const calculateRandomSetup = useCallback(() => {
-    const requiredTiles = requiredSets.reduce((acc, set) => {
+    const requiredTiles = requiredSets.reduce((acc: Array<Tile>, set) => {
       return [...acc, ...set.tiles];
     }, []);
 
@@ -176,7 +179,7 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
       .sort(() => 0.5 - Math.random());
 
     const { sets: selectedOptionalSets } = shuffledOptionalSets.reduce(
-      (acc, set) => {
+      (acc: { numberOfTiles: number; sets: Array<TileSet> }, set) => {
         if (acc.numberOfTiles + set.tiles.length <= numberOfNeededTiles) {
           return {
             sets: [...acc.sets, set],
@@ -189,9 +192,12 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
       { sets: [], numberOfTiles: 0 }
     );
 
-    const selectedOptionalTiles = selectedOptionalSets.reduce((acc, set) => {
-      return [...acc, ...set.tiles];
-    }, []);
+    const selectedOptionalTiles = selectedOptionalSets.reduce(
+      (acc: Array<Tile>, set) => {
+        return [...acc, ...set.tiles];
+      },
+      []
+    );
 
     const finalTiles: Array<Tile> = [
       ...requiredTiles,
