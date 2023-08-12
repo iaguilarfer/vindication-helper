@@ -8,7 +8,8 @@
 
 .buttons {
   position: sticky;
-  bottom: 2.5rem;
+  bottom: 0;
+  padding-top: 2rem;
   background: rgb(var(--background-start-rgb));
   display: flex;
   gap: 1rem;
