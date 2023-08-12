@@ -60,12 +60,12 @@ export default function Setup() {
         >
           Get new random setup
         </Button>
+        <Link href={"/"}>
+          <Button className={styles.button} size={"large"} primary={true}>
+            Start again
+          </Button>
+        </Link>
       </div>
-      <Link href={"/"}>
-        <Button className={styles.button} size={"large"} primary={true}>
-          Start again
-        </Button>
-      </Link>
     </div>
   );
 }

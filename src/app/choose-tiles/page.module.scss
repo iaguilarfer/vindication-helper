@@ -8,9 +8,9 @@
 
 .buttons {
   position: sticky;
-  bottom: 2.5rem;
+  bottom: 0;
+  padding-top: 2rem;
   background: rgb(var(--background-start-rgb));
-  margin-bottom: 2rem;
 }
 
 :global(#app) {
@@ -20,9 +20,11 @@
   }
 
   .button {
-    font-size: 2rem;
+    font-size: 1.5rem;
     height: auto;
     width: 100%;
+
+    margin-bottom: 2rem;
   }
 }
 
